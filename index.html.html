@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surat Ulang Tahun 💌</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+  font-family:'Poppins',sans-serif;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:
+    radial-gradient(circle at top,#ffe6f1 0%,transparent 60%),
+    linear-gradient(180deg,#ffd6e7,#ffc0d9);
+  overflow:hidden;
+}
+
+/* FLOATING LOVE */
+.float{
+  position:absolute;
+  animation:floatUp 8s linear infinite;
+  opacity:.6;
+}
+
+@keyframes floatUp{
+  0%{transform:translateY(0);}
+  100%{transform:translateY(-120vh);}
+}
+
+/* SPARKLE */
+.sparkle{
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:white;
+  border-radius:50%;
+  animation:twinkle 2.5s infinite alternate;
+  opacity:.8;
+}
+
+@keyframes twinkle{
+  from{transform:scale(.6);}
+  to{transform:scale(1.2);}
+}
+
+/* CONTAINER */
+.container{
+  width:100%;
+  max-width:420px;
+  text-align:center;
+  position:relative;
+  z-index:5;
+}
+
+/* SURAT */
+.envelope{
+  width:280px;
+  height:180px;
+  background:#ff7eb3;
+  margin:0 auto;
+  border-radius:14px;
+  position:relative;
+  cursor:pointer;
+  transition:.8s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.envelope::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#ff5fa2;
+  clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);
+}
+
+.envelope span{
+  position:absolute;
+  bottom:14px;
+  left:50%;
+  transform:translateX(-50%);
+  color:white;
+  font-size:18px;
+  font-weight:600;
+}
+
+/* ISI */
+.content{
+  display:none;
+  background:white;
+  border-radius:26px;
+  padding:32px;
+  margin-top:20px;
+  animation:fadeUp 1s ease forwards;
+  box-shadow:0 15px 40px rgba(0,0,0,.18);
+}
+
+.content h2{
+  font-family:'Dancing Script',cursive;
+  font-size:36px;
+  color:#ff4f96;
+}
+
+.date{color:#888;margin:12px 0;}
+
+.content p{
+  font-size:21px;
+  line-height:1.7;
+  color:#333;
+}
+
+/* BALON */
+.balloon{
+  position:absolute;
+  bottom:-100px;
+  width:42px;
+  height:58px;
+  border-radius:50%;
+  animation:balloon 12s linear infinite;
+  opacity:.65;
+}
+
+.balloon::after{
+  content:"";
+  position:absolute;
+  bottom:-18px;
+  left:50%;
+  width:2px;
+  height:22px;
+  background:#aaa;
+}
+
+@keyframes balloon{
+  to{transform:translateY(-130vh);}
+}
+
+/* CONFETTI */
+.confetti{
+  position:absolute;
+  width:7px;
+  height:7px;
+  background:#ff5fa2;
+  animation:confetti 6s linear infinite;
+}
+
+@keyframes confetti{
+  from{transform:translateY(-10vh) rotate(0);}
+  to{transform:translateY(120vh) rotate(360deg);}
+}
+
+/* HP */
+@media(max-width:480px){
+  .envelope{width:240px;height:160px;}
+  .content p{font-size:20px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOVE FLOAT -->
+<div class="float" style="left:10%;font-size:24px;">💖</div>
+<div class="float" style="left:30%;font-size:18px;animation-delay:2s;">💗</div>
+<div class="float" style="left:70%;font-size:22px;animation-delay:4s;">💞</div>
+<div class="float" style="left:85%;font-size:16px;animation-delay:1s;">✨</div>
+
+<!-- SPARKLE -->
+<div class="sparkle" style="top:15%;left:20%;"></div>
+<div class="sparkle" style="top:25%;right:18%;"></div>
+<div class="sparkle" style="bottom:20%;left:25%;"></div>
+
+<!-- BALON -->
+<div class="balloon" style="left:8%;background:#ff9acb;"></div>
+<div class="balloon" style="right:12%;background:#d9a7ff;animation-delay:5s;"></div>
+
+<!-- CONFETTI -->
+<div class="confetti" style="left:35%;animation-delay:0s;"></div>
+<div class="confetti" style="left:55%;animation-delay:2s;"></div>
+
+<div class="container">
+  <div class="envelope" id="envelope">
+    <span>💌 Klik Surat</span>
+  </div>
+
+  <div class="content" id="content">
+    <h2>Happy Birthday Sayangg 🎉</h2>
+    <div class="date">12 January 2026</div>
+    <p>
+      happy birthday sayangg, hope you have a great day and always happy, semoga semua keinginan kamu tahun ini terkabulkan ya , makasii yah udah sama aku teruss ngehadepin aku yg jahil dan bikin kesel kamu, makasii atas semuanya, maaff yaa kalo hadiah kamu telatt, i lovee youu 💖
+    </p>
+  </div>
+</div>
+
+<script>
+const e=document.getElementById("envelope");
+const c=document.getElementById("content");
+e.onclick=()=>{
+  e.style.transform="scale(.6) translateY(-40px)";
+  e.style.opacity=0;
+  setTimeout(()=>{
+    e.style.display="none";
+    c.style.display="block";
+  },700);
+};
+</script>
+
+</body>
+</html>
